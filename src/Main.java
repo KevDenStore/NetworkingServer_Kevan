@@ -36,7 +36,18 @@ public class NetworkingServer {
                         System.out.println("message recieved from client = " + msgFromClient);
 
                         if (msgFromClient != null && ! msgFromClient.equalsIgnoreCase("bye")) {
-                            OutputStream
+                            OutputStream clientOut = client.getOutputStream();
+                            PrintWriter pw = new PrintWriter(clientOut, true);
+                            String ansMsg = "hello, " + msgFromClient;
+                            pw.println(ansMsg);
                         }
+                        if (msgFromClient ! = null && msgFromClient.equalsIgnoreCase("bye")){
+                            server.close();
+                            client.close();
+                            break;
+                        }
+                        } catch (IOException ie) {
+                        System.out.println("synd, din kod funka inte");
+                    } }}}
     }
 }
