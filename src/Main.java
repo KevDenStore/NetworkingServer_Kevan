@@ -41,7 +41,7 @@ public class NetworkingServer {
                             String ansMsg = "hello, " + msgFromClient;
                             pw.println(ansMsg);
                         }
-                        if (msgFromClient ! = null && msgFromClient.equalsIgnoreCase("bye")){
+                        if (msgFromClient != null && msgFromClient.equalsIgnoreCase("bye")){
                             server.close();
                             client.close();
                             break;
